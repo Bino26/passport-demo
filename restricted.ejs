@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restricted</title>
+  </head>
+  <body>
+    <p>This page is restricted. You can't see it unless you are logged on.</p>
+    <p>You have visited this page <%= pageCount %> times since logon.</p>
+    <p>The secret string is <%= secretString %></p>
+    <p>To change it, put in a new value below</p>
+    <form action="/restricted" method="POST">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+      <input name="secretString" type="text" />
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
